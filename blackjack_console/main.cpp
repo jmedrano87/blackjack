@@ -17,11 +17,14 @@ int main()
 	players = getNoOfPlayers();
 	game.startRound(players);
 
-	cout << "The dealer has: ";
-	game.printHand(&cout);
+	cout << "The dealer first card is: ";
+	game.printDealerHand(&cout, true);
 	for (player = 0; player < players; player++) {
 		turn(game, player);
 	}
+	cout << "The dealer has: ";
+	game.printDealerHand(&cout, false);
+	cout << endl << game.getScore() << endl;
 
 	return 0;
 }

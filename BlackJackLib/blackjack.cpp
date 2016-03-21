@@ -94,12 +94,15 @@ void Blackjack::printHand(unsigned player, ostream *out) const
 	}
 }
 
-void Blackjack::printHand(std::ostream *out) const
+void Blackjack::printDealerHand(std::ostream *out, bool firstOnly) const
 {
 	unsigned i;
 
-	for (i = 0; i < house.getNoOfCards(); i++)
-		*out << house.getCard(i).rank << house.getCard(i).suit << " ";
+	if (firstOnly)
+		*out << house.getCard(0).rank << house.getCard(0).suit << " ??";
+	else
+		for (i = 0; i < house.getNoOfCards(); i++)
+			*out << house.getCard(i).rank << house.getCard(i).suit << " ";
 }
 
 void Blackjack::hit(unsigned player)

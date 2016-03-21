@@ -23,7 +23,7 @@ public:
 	unsigned getScore() const;
 	void startRound(unsigned = 1);					//Deal 2 cards to x players and the house
 	void printHand(unsigned, std::ostream *) const;	//Output rank and suit of each Card in players[x].hand
-	void printHand(std::ostream *) const;
+	void printDealerHand(std::ostream *, bool = false) const;
 	void hit(unsigned);								//deal a card to player[x]
 	std::vector<Card> getPlayerHand(unsigned = 0) const;
 	std::vector<Card> getHouseHand() const;
