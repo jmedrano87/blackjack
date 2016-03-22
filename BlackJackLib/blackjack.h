@@ -22,6 +22,7 @@ public:
 	unsigned getScore(unsigned) const;				//Calculate and return player[x]'s current hand score
 	unsigned getScore() const;
 	void startRound(unsigned = 1);					//Deal 2 cards to x players and the house
+	void endRound(unsigned = 16);					//Deal cards to house until score >= min
 	void printHand(unsigned, std::ostream *) const;	//Output rank and suit of each Card in players[x].hand
 	void printDealerHand(std::ostream *, bool = false) const;
 	void hit(unsigned);								//deal a card to player[x]

@@ -24,6 +24,9 @@ int main()
 	}
 	cout << "The dealer has: ";
 	game.printDealerHand(&cout, false);
+	game.endRound();
+	cout << endl;
+	game.printDealerHand(&cout, false);
 	cout << endl << game.getScore() << endl;
 
 	return 0;

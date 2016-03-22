@@ -85,6 +85,13 @@ void Blackjack::startRound(unsigned noOfPlayers)
 	deal(house, deck.drawCard());
 }
 
+void Blackjack::endRound(unsigned min)
+{
+	while (getScore() < min) {
+		deal(house, deck.drawCard());
+	}
+}
+
 void Blackjack::printHand(unsigned player, ostream *out) const
 {
 	unsigned i;
