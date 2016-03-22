@@ -28,20 +28,27 @@ public:
 	/// </summary>
 	/// <returns>An unsigned interger.</returns>
 	unsigned getNoOfCards() const;
-	/// <summary>
-	/// Returns the Card object at this.hand[card].
-	/// </summary>
+	/// <summary>Returns the Card object at this.hand[card].</summary>
 	/// <param name='card'> The index of the Card object to return</param>
 	Card getCard(unsigned) const;
-	void discardHand();		//clear() hand
-	unsigned getNo();		//get the player number
-	void setNo(unsigned);	//set the player number
+	/// <summary>Resets this player's hand by calling hand.clear().</summary>
+	void discardHand();
+	/// <summary>Returns an uint representing the player's "number" (player.no).</summary>
+	unsigned getNo();
+	/// <summary>Set the player's "number" (player.no) to the passed uint.</summary>
+	void setNo(unsigned);
 
 private:
+	/// <summary>An uint representing the number of times this player has won.</summary>
 	unsigned wins;
+	/// <summary>An uint representing the number of times this player has lost.</summary>
 	unsigned losses;
+	/// <summary>
+	/// Represents this player's "hand" as a vector of <paramref name='Card'/> objects.
+	/// </summary>
 	std::vector<Card> hand;
-	unsigned no;			//player number
+	/// <summary>An uint that serves as a unique identifier for the player.</summary>
+	unsigned no;
 
 };
 
