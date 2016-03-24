@@ -36,3 +36,22 @@ void Player::setNo(unsigned playerNo)
 {
 	no = playerNo;
 }
+
+void Player::addWin() 
+{
+	wins++;
+}
+
+unsigned Player::getWins() const
+{
+	return wins;
+}
+
+unsigned Player::getLosses() const
+{
+	return losses;
+}
+void Player::addLoss()
+{
+	losses++;
+}

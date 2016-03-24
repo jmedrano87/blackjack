@@ -90,6 +90,23 @@ void Blackjack::endRound(unsigned min)
 	while (getScore() < min) {
 		deal(house, deck.drawCard());
 	}
+
+	if (getScore() <= 20) {
+		for (unsigned i = 0; i < players.size(); i++) {
+			if (getScore(i) > getScore() && !(getScore(i) > 21))
+				players[i].addWin();
+			else
+				players[i].addLoss();
+		}
+	}
+	else if (getScore() > 21) {
+		for (unsigned i = 0; i < players.size(); i++) {
+			if (getScore(i) <= 21)
+				players[i].addWin();
+			else
+				players[i].addLoss();
+		}
+	}
 }
 
 void Blackjack::printHand(unsigned player, ostream *out) const

@@ -14,6 +14,10 @@ public:
 	void discardHand();		//clear() hand
 	unsigned getNo();		//get the player number
 	void setNo(unsigned);	//set the player number
+	unsigned getWins() const;
+	void addWin();
+	unsigned getLosses() const;
+	void addLoss();
 
 private:
 	unsigned wins;
